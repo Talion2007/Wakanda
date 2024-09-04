@@ -1,0 +1,48 @@
+body{
+    background-image: url(TreeBack.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.Logo { 
+    float: left;
+    width: 10%;
+    height: 10%;
+}
+
+.ColorTittle{
+    display: inline-block;
+    background-color: aliceblue;
+    border: 1px black solid ;
+    border-radius: 10px;
+    font-family: Courier;
+    color: blueviolet;
+    width: 85%;
+    padding: 1%;
+    margin-bottom: 2.5%;
+}
+
+.ColorText{
+    background-color: aliceblue;
+    border: 1px black solid ;
+    border-radius: 10px;
+    font-family: Courier;
+    color: blueviolet;
+    width: 90%;
+    padding: 1%;
+    margin-bottom: 1%;
+}
+
+.Article{
+    display: inline-table;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 40%;
+    padding: 1%;
+}
+
+.ArticleLocal{
+    display: inline-block;
+}
