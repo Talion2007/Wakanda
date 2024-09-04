@@ -1,0 +1,156 @@
+body {
+    background-color: darkblue;
+}
+
+.white {
+        border: 1px solid aliceblue;
+        background-color: aliceblue;
+        margin-right: 5%;
+        margin-left: 45%;
+        background-color: white;
+
+    h1 {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    h2 {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    h3 {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    ul {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    dl {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    p {
+        color: cornflowerblue;
+        font-family: Courier;
+        float: right;
+        padding: 15px
+    }
+
+    a {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    i {
+        color: cornflowerblue;
+    }
+}
+
+.blue {
+  
+        float: left;
+        padding: 15px;
+        border: 1px solid aliceblue;
+        background-color: cornflowerblue;
+        margin-right: 45%;
+        margin-left: 5%;
+
+
+    h1 {
+        color: aliceblue;
+        font-family: Courier;
+    }
+
+    h2 {
+        color: aliceblue;
+        font-family: Courier;
+    }
+
+    h3 {
+        color: aliceblue;
+        font-family: Courier;
+    }
+
+    ul {
+        color: aliceblue;
+        font-family: Courier;
+    }
+
+    dl {
+        color: aliceblue;
+        font-family: Courier;
+    }
+
+    p {
+        color: aliceblue;
+        font-family: Courier;
+    }
+
+    a {
+        color: aliceblue;
+        font-family: Courier;
+    }
+
+    i {
+        color: aliceblue;
+    }
+}
+
+.other {
+  
+        border: 1px solid aliceblue;
+        background-color: antiquewhite;
+        margin-right: 25%;
+        margin-left: 25%;
+
+
+    img {
+        float: right;
+        background-color: antiquewhite;
+        margin-right: 5%;
+    }
+
+    h1 {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    h2 {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    h3 {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    ul {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    dl {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    p {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    a {
+        color: cornflowerblue;
+        font-family: Courier;
+    }
+
+    i {
+        color: cornflowerblue;
+    }
+}

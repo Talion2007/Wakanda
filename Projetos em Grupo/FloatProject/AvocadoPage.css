@@ -1,0 +1,195 @@
+body {
+    background-color: darkred;
+}
+
+.Logo {
+    float: left;
+    background-color: aliceblue;
+    border: 1px black solid;
+    max-width: 10%;
+}
+
+.ColorTittle {
+    display: inline-block;
+    background-color: aliceblue;
+    border: 1px black solid;
+    font-family: Courier;
+    font-size: 1vw;
+    color: darkred;
+    width: 85%;
+    padding: 1%;
+    margin-bottom: 2.5%;
+}
+
+.Article {
+    display: inline-table;
+    width: 45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+.ArticleColor {
+    background-color: aliceblue;
+    border: 0.1vh black solid;
+    font-family: Courier;
+    font-size: 1vw;
+    color: darkred;
+    padding: 1%;
+    margin-top: 2.5%;
+}
+
+.LeftBox {
+    display: inline-table;
+    background-color: aliceblue;
+    border: 1px black solid;
+    font-family: Courier;
+    font-size: 1vw;
+    color: black;
+    width: 20%;
+    padding: 1%;
+}
+
+.RightBox {
+    display: inline-table;
+    background-color: aliceblue;
+    border: 1px black solid;
+    font-family: Courier;
+    font-size: 1vw;
+    color: black;
+    width: 20%;
+    padding: 1%;
+}
+
+.LeftImage {
+    float: left;
+    max-width: 25%;
+    padding: 1%;
+}
+
+.RightImage {
+    float: right;
+    max-width: 25%;
+    padding: 1%;
+}
+
+.CentralRodapé {
+    background-color: aliceblue;
+    border: 1px black solid;
+    font-family: Courier;
+    font-size: 1vw;
+    color: darkred;
+    margin-top: 2.5%;
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        background-color: darkblue;
+    }
+
+    .ColorTittle {
+        display: inline-block;
+        font-size: 1.5vw;
+        margin-bottom: 2.5%;
+    }
+
+    .Article {
+        width: 92.5%;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-bottom: 2.5%;
+    }
+
+    .ArticleColor {
+        font-size: 1.5vw;
+        padding: 1%;
+        margin-top: 2.5%;
+    }
+
+    .LeftBox {
+        font-size: 1.5vw;
+        width: 90%;
+
+        a {
+            display: inline-block;
+            padding: 0.5%;
+        }
+    }
+
+    .RightBox {
+        font-size: 1.5vw;
+        width: 90%;
+    }
+
+    .LeftImage {
+        float: left;
+        max-width: 20%;
+    }
+
+    .RightImage {
+        float: right;
+        max-width: 20%;
+    }
+
+
+    .CentralRodapé {
+        font-size: 1.5vw;
+        margin-top: 2.5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background-color: darkorange;
+    }
+
+    .ColorTittle {
+        display: inline-block;
+        font-size: 2vw;
+        margin-bottom: 2.5%;
+    }
+
+    .Article {
+        width: 92.5%;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-bottom: 2.5%;
+    }
+
+    .ArticleColor {
+        font-size: 2vw;
+        padding: 1%;
+        margin-top: 2.5%;
+    }
+
+    .LeftBox {
+        font-size: 2vw;
+        width: 90%;
+
+        a {
+            display: inline-block;
+            padding: 0.5%;
+        }
+    }
+
+    .RightBox {
+        font-size: 2vw;
+        width: 90%;
+    }
+
+    .LeftImage {
+        float: left;
+        max-width: 15%;
+    }
+
+    .RightImage {
+        float: right;
+        max-width: 15%;
+    }
+
+
+    .CentralRodapé {
+        font-size: 2vw;
+        margin-top: 2.5%;
+    }
+}

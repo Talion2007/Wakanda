@@ -1,0 +1,32 @@
+body {background-color: darkred;}
+center {border: 1px solid aliceblue; background-color: brown;}
+h1 {color: aliceblue;font-family: Courier;}
+h2 {color: aliceblue;font-family: Courier;}
+h3 {color: aliceblue;font-family: Courier;}
+ul {color: aliceblue;font-family: Courier;}
+dl {color: aliceblue;font-family: Courier;}
+p {color: aliceblue;font-family: Courier;}
+a {color: aliceblue;font-family: Courier;}
+
+.white
+{
+center {border: 1px solid aliceblue; background-color: aliceblue;}
+h1 {color: brown;font-family: Courier;}
+h2 {color: brown;font-family: Courier;}
+h3 {color: brown;font-family: Courier;}
+ul {color: brown;font-family: Courier;}
+dl {color: brown;font-family: Courier;}
+p {color: brown;font-family: Courier;}
+a {color: brown;font-family: Courier;}
+}
+
+.red{
+center {border: 1px solid aliceblue; background-color: brown;}
+h1 {color: aliceblue;font-family: Courier;}
+h2 {color: aliceblue;font-family: Courier;}
+h3 {color: aliceblue;font-family: Courier;}
+ul {color: aliceblue;font-family: Courier;}
+dl {color: aliceblue;font-family: Courier;}
+p {color: aliceblue;font-family: Courier;}
+a {color: aliceblue;font-family: Courier;}
+}
