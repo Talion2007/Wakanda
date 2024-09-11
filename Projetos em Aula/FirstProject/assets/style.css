@@ -1,0 +1,182 @@
+body {
+    background-color: darkblue;
+    background-image: linear-gradient(lightskyblue, darkblue);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 2.5%;
+}
+
+section {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: darkblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    header {
+        background-image: linear-gradient(antiquewhite, moccasin);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        border-radius: 1vw;
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: space-around;
+        justify-content: space-evenly;
+        font-size: 1.5vw;
+        padding: 2.5%;
+        margin: 1%;
+
+        img {
+            width: 10%;
+            height: auto;
+        }
+    }
+
+    article {
+        background-image: linear-gradient(antiquewhite, moccasin);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        border-radius: 1vw;
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: space-around;
+        justify-content: space-around;
+        font-size: 1vw;
+        text-align: center;
+        padding: 2.5%;
+        margin: 1%;
+
+
+        img {
+            width: 20%;
+            height: auto;
+            transition: all 2s;
+            border-radius: 1vw;
+            padding: 1%;
+        }
+
+        img:hover {
+            width: 45%;
+            height: auto;
+            transition: all 2s;
+            border-radius: 5vw;
+            padding: 1%;
+        }
+    }
+
+    footer {
+        background-image: linear-gradient(antiquewhite, moccasin);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        border-radius: 1vw;
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: space-around;
+        justify-content: space-evenly;
+        font-size: 1.5vw;
+        padding: 2.5%;
+        margin: 1%;
+
+        img {
+            width: 10%;
+            height: auto;
+        }
+    }
+}
+
+
+/*  ate 480px  */
+/* de 481px ate 768px */
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+    section {
+        header {
+            border-radius: 2vw;
+            font-size: 2vw;
+            padding: 2.5%;
+            margin: 1%;
+        }
+
+        article {
+            border-radius: 2vw;
+            font-size: 1.5vw;
+
+            img {
+                width: 40%;
+                height: auto;
+                transition: all 2s;
+                border-radius: 2.5vw;
+            }
+
+            img:hover {
+                width: 90%;
+                height: auto;
+                transition: all 2s;
+                border-radius: 7.5vw;
+            }
+        }
+
+        footer {
+            border-radius: 2vw;
+            font-size: 2vw;
+            margin: 1%;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    section {
+        header {
+            border-radius: 2vw;
+            font-size: 3vw;
+            padding: 2.5%;
+            margin: 1%;
+    
+            img {
+                display: none;
+            }
+        }
+
+        article {
+            border-radius: 2vw;
+            font-size: 2vw;
+
+            img {
+                width: 35%;
+                height: auto;
+                transition: all 2s;
+                border-radius: 5vw;
+            }
+
+            img:hover {
+                width: 90%;
+                height: auto;
+                transition: all 2s;
+                border-radius: 10vw;
+            }
+        }
+
+        footer {
+            border-radius: 2vw;
+            font-size: 3vw;
+            margin: 1%;
+
+            img {
+                width: 10%;
+                height: auto;
+            }
+        }
+    }
+}
