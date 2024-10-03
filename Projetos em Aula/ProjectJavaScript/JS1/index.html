@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Hello, World!</title>
+
+    <style>
+        body {
+            background-color: lightgreen;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            background-color: rebeccapurple;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: purple;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Hello, World!</h1>
+    <button id="meuBotao">Clique aqui</button>
+    <p id="mensagem"></p>
     <script>
         console.log("Olá, Mundo no Console!");
         document.querySelector('h1').innerText = "Olá, Mundo na Página!";
+
+        document.getElementById("meuBotao").addEventListener("click", function () {
+            document.getElementById("mensagem").innerText = "Yamato Kudasaiiiiiiiiiiiii (O~~O)";
+        });
+
     </script>
 </body>
+
 </html>
