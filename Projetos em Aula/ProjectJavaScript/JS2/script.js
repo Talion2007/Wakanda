@@ -24,3 +24,13 @@ console.log(OchaTri);
 let Sushi = "Arigatou Gozai Masu";
 let OchaQuo = `Awawwww, ${Desu}! ${Sushi}! (^O^)`;
 console.log(OchaQuo);
+
+//! Teste de Var
+var nome = "Pedro";
+console.log(nome);  // Saída: "Pedro"
+
+// Opa! O `var` não liga para o escopo do bloco. Ele está em todo lugar!
+if (true) {
+  var nome = "João";
+}
+console.log(nome);  // Saída: "João" — Opa! O nome foi alterado para "João" globalmente!
