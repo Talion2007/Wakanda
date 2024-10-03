@@ -1,0 +1,1 @@
+document.getElementById('titulo').innerText = "Olá, Mundo em JavaScript Externo!";
