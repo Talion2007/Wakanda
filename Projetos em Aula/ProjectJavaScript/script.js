@@ -1,7 +1,4 @@
 // ToDo: Código de inicialização:
-let homus = prompt("Você é Gay? (0 para não e 1 para sim)")
-let mensagem = (homus <= 0) ? "Para de mentir, Viado Bixinha" : "Lá elu, Bixona se Assumindo";
-alert(mensagem)
 document.getElementById("titulo").innerText = "Referências de JavaScript";
 console.log("Olá, Mundo no Console!");
 document.getElementById("meuBotao").addEventListener("click", function () {
@@ -139,6 +136,11 @@ document.getElementById("meuBotao").addEventListener("click", function () {
 // let reais = parseFloat(dolar) * 5.567
 // alert("Seu novo salário é " + reais)
 
+//* Exemplo de Prompt e Alert:
+// let homus = prompt("Você é Gay? (0 para não e 1 para sim)")
+// let mensagem = (homus <= 0) ? "Para de mentir, Viado Bixinha" : "Lá elu, Bixona se Assumindo";
+// alert(mensagem)
+
 // ! Operadores Aritiméticos - Adição:
 // let soma = 5 + 3;
 // console.log(soma);  // Saída: 8
@@ -245,3 +247,71 @@ document.getElementById("meuBotao").addEventListener("click", function () {
 // let numerador = 50, denominador = 5;
 // let resultadoDivisao = numerador / denominador
 // console.log("Resultado da Divisão: " + resultadoDivisao);
+
+//! Operadores de Comparação - Igualdade Simples:
+// let igualdadeSimples = 5 == "5";
+// console.log(igualdadeSimples);
+
+//! Operadores de Comparação - Igualdade Estrita:
+// let igualdadeEstrita = 5 === "5"
+// console.log(igualdadeEstrita);
+
+//! Operadores de Comparação - Diferença Simples:
+// let diferencaSimples = 5 != "5";
+// console.log(diferencaSimples);
+
+//! Operadores de Comparação - Igualdade Estrita:
+// let diferencaEstrita = 5 !== "5"
+// console.log(diferencaEstrita);
+
+//! Operadores de Comparação - Maior Que:
+// let comparacaoMaior = 5 > 3
+// console.log(comparacaoMaior);
+
+//! Operadores de Comparação - Maior ou Igual:
+// let maiorIgual = 5 >= 5
+// console.log(maiorIgual);
+
+//! Operadores de Comparação - Menor Que:
+// let comparacaoMenor = 5 < 7
+// console.log(comparacaoMenor);
+
+//! Operadores de Comparação - Menor ou Igual:
+// let menorIgual = 5 <= 5
+// console.log(menorIgual);
+
+// ToDo - Desafios de Comparação:
+// let alturaPessoaOne = 1.75, alturaPessoaDuo = 1.80;
+// console.log(`Altura da Pessoa 1 (${alturaPessoaOne}) é igual a Altura da Pessoa 2 (${alturaPessoaDuo})? ${alturaPessoaOne == alturaPessoaDuo}`)
+// let appleApple = 'Apple' != 'apple';
+// console.log(`Apple é igual a apple? ${appleApple}`);
+// let notaMedia = 7, notaFinal = 9;
+// console.log(`Nota final (${notaFinal}) é maior que Média (${notaMedia})? ${notaFinal >= notaMedia}`);
+
+//! Operadores Lógicos - And:
+// let temCombustivel = true; 
+// let carroFuncionando = true;
+// let guiaViagem = false;
+// let possoViajar = temCombustivel && carroFuncionando;
+// let consigoChegar = temCombustivel && guiaViagem;
+// console.log(`Posso Viajar? ${possoViajar}`); 
+// console.log(`Consigo Chegar? ${consigoChegar}`); 
+
+//! Operadores Lógicos - Or:
+// let diaEnsolarado = false;
+// let guardaSol = true;
+// let praiaGarantida = diaEnsolarado || guardaSol;
+// console.log(`A praia está garantida? ${praiaGarantida}`)
+
+//! Operadores Lógicos - Not:
+// let estaChovendo = true;
+// let naoChove = !estaChovendo;
+// console.log(`Não Chove? ${naoChove}`);
+
+//? Como utilizar os três operadorem em uma Questão?
+let diaEnsolarado = false;
+let guardaSol = true;
+let carroFuncionando = true;
+let estaChovendo = false;
+let fazerPiquinique = (diaEnsolarado || guardaSol) && carroFuncionando && !estaChovendo;
+console.log(`Podemos fazer piquinique? ${fazerPiquinique}`);
