@@ -119,3 +119,14 @@ document.getElementById("titulo").innerText =
 // let id = Symbol("id");   // Criando um símbolo
 // let id2 = Symbol("id");  // Outro símbolo, mas diferente
 // console.log(id === id2);  // Saída: false (são símbolos diferentes)
+
+//! Prompt e Alert
+// let salario = prompt("Digite seu Salário")
+// let aumento = prompt("Digite seu Aumento")
+// let total = parseInt(salario) + (parseInt(salario) / 100 * parseInt(aumento))
+// alert("Seu novo salário é " + total) 
+
+//* Exercício de Prompt e Alert:
+// let dolar = prompt("Digite suas Doletas")
+// let reais = parseFloat(dolar) * 5.567
+// alert("Seu novo salário é " + reais) 
