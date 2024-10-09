@@ -26,19 +26,19 @@ document.getElementById("titulo").innerText =
 // let OchaQuo = `Awawwww, ${Desu}! ${Sushi}! (^O^)`;
 // console.log(OchaQuo);
 
-//! Teste de Var
+//* Teste de Var
 // var nome = "De dia é Maria";
 // console.log(nome);
 // if (true) {var nome = "De noite é João";}
 // console.log(nome);
 
-//! Teste de Let
+//* Teste de Let
 // let Var01 = 25;
 // console.log(Var01);
 // if (true) {let Var01 = 30; console.log(Var01);}
 // console.log(Var01);
 
-//! Teste de Const
+//* Teste de Const
 // const pi = 3.1415;
 // console.log(pi);
 // pi = 3.14;
@@ -85,7 +85,7 @@ document.getElementById("titulo").innerText =
 // const z = 10;
 // const z = 20; // Erro! `const` não permite redeclaração ou reatribuição.
 
-//* Tipos Primitivos - Number:
+//! Tipos Primitivos - Number:
 // let idade = 30;            // Um número inteiro
 // let altura = 1.75;         // Um número decimal
 // console.log(idade);        // Saída: 30
@@ -93,7 +93,7 @@ document.getElementById("titulo").innerText =
 // let soma = idade + altura; // Operação de soma
 // console.log(soma);         // Saída: 31.75
 
-//* Tipos Primitivos - String:
+//! Tipos Primitivos - String:
 // let nome = "João";         // String com aspas duplas
 // let saudacao = 'Oi, tudo bem?';  // String com aspas simples
 // let mensagem = `Bem-vindo, ${nome}!`; // Template literal, combinando texto e variáveis
@@ -101,21 +101,21 @@ document.getElementById("titulo").innerText =
 // console.log(saudacao);     // Saída: "Oi, tudo bem?"
 // console.log(mensagem);     // Saída: "Bem-vindo, João!"
 
-//* Tipos Primitivos - Boolean:
+//! Tipos Primitivos - Boolean:
 // let estaChovendo = false;  // Não está chovendo
 // let temSol = true;         // Está ensolarado
 // console.log(estaChovendo);  // Saída: false
 // console.log(temSol);        // Saída: true
 
-//* Tipos Primitivos - Null:
+//! Tipos Primitivos - Null:
 // let resultado = null;  // O resultado ainda não foi calculado
 // console.log(resultado);  // Saída: null (nada de propósito)
 
-//* Tipos Primitivos - Undefined:
+//! Tipos Primitivos - Undefined:
 // let preco;  // Variável declarada, mas sem valor
 // console.log(preco);  // Saída: undefined (não há valor atribuído)
 
-//* Tipos Primitivos - Symbol:
+//! Tipos Primitivos - Symbol:
 // let id = Symbol("id");   // Criando um símbolo
 // let id2 = Symbol("id");  // Outro símbolo, mas diferente
 // console.log(id === id2);  // Saída: false (são símbolos diferentes)
@@ -130,3 +130,47 @@ document.getElementById("titulo").innerText =
 // let dolar = prompt("Digite suas Doletas")
 // let reais = parseFloat(dolar) * 5.567
 // alert("Seu novo salário é " + reais) 
+
+//! Operadores Aritiméticos - Adição:
+// let soma = 5 + 3;
+// console.log(soma);  // Saída: 8
+
+//* Exemplo com String (Atenção):
+// let resultado = "5" + 3;
+// console.log(resultado);  // Saída: "53"
+
+//! Operadores Aritiméticos - Subtração:
+// let subtracao = 8 - 3;
+// console.log(subtracao);  // Saída: 5
+
+//! Operadores Aritiméticos - Multiplicação:
+// let multiplicacao = 2 * 3;
+// console.log(multiplicacao);  // Saída: 6
+
+//! Operadores Aritiméticos - Divisão:
+// let divisao = 10 / 2;
+// console.log(divisao);  // Saída: 5
+
+// //? O que acontece quando os resultados são Decimais?
+// let divisaoDecimal = 7 / 2;
+// console.log(divisaoDecimal);  // Saída: 3.5
+
+//! Operadores Aritiméticos - Módulo:
+// let resto = 10 % 3;
+// console.log(resto);  // Saída: 1
+
+//? É possivel saber se um número é Impar ou Par com Módulo?
+// let numero1 = 10;
+// let numero2 = 15;
+// let restoNumero1 = numero1 % 2;
+// let restoNumero2 = numero2 % 2;
+// console.log("Resto da divisão de 10 por 2: " + restoNumero1);  // Saída: 0 (Par)
+// console.log("Resto da divisão de 15 por 2: " + restoNumero2);  // Saída: 1 (Ímpar)
+
+//* Exemplo de Ordem de Operação:
+// let resultado = 5 + 2 * 3 - 4 / 2;
+// console.log(resultado);  // Saída: 9
+
+//* Exemplo com Parênteses:
+// let resultado = (5 + 2) * (3 - 4 / 2);
+// console.log(resultado);  // Saída: 7
