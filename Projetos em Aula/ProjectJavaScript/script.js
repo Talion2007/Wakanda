@@ -1,11 +1,19 @@
 //ToDo: Código de inicialização:
 document.getElementById("titulo").innerText = "Referências de JavaScript";
-console.log("Hello Narcóticos Achados")
-let nome = prompt("Qual é o seu Nome?")
-let mensagem = `Yamato Kudasai, ${nome} (O~~O)`
+console.log("Hello Narcóticos Achados");
+
+//ToDo: Botão Primário:
+let nome = prompt("Qual é o seu Nome?");
+let mensagem = `Yamato Kudasai, ${nome} (O~~O)`;
 document.getElementById("meuBotao").addEventListener("click", function () {
   document.getElementById("mensagem").innerText = mensagem;
 });
+
+//Todo: Botão gerar:
+function gerar() {
+  var resp = document.getElementById("resp");
+  resp.innerHTML = Math.floor(100 * Math.random());
+}
 
 //! Concatenação: Juntando Strings com o +
 // let Mizu = "Kon'nichiwa​";
@@ -240,8 +248,8 @@ document.getElementById("meuBotao").addEventListener("click", function () {
 // let divisaoAlfaBeta = numeroAlfa / numeroBeta;
 // console.log(`Alfa = ${numeroAlfa} e Beta = ${numeroBeta}:
 // Soma = ${somaAlfaBeta},
-// Subtração = ${subtracaoAlfaBeta}, 
-// Multiplicação = ${multiplicacaoAlfaBeta}, 
+// Subtração = ${subtracaoAlfaBeta},
+// Multiplicação = ${multiplicacaoAlfaBeta},
 // Divisão = ${divisaoAlfaBeta}`)
 
 //ToDo - Atividade 5: Divisão Exata
@@ -290,13 +298,13 @@ document.getElementById("meuBotao").addEventListener("click", function () {
 // console.log(`Nota final (${notaFinal}) é maior que Média (${notaMedia})? ${notaFinal >= notaMedia}`);
 
 //! Operadores Lógicos - And:
-// let temCombustivel = true; 
+// let temCombustivel = true;
 // let carroFuncionando = true;
 // let guiaViagem = false;
 // let possoViajar = temCombustivel && carroFuncionando;
 // let consigoChegar = temCombustivel && guiaViagem;
-// console.log(`Posso Viajar? ${possoViajar}`); 
-// console.log(`Consigo Chegar? ${consigoChegar}`); 
+// console.log(`Posso Viajar? ${possoViajar}`);
+// console.log(`Consigo Chegar? ${consigoChegar}`);
 
 //! Operadores Lógicos - Or:
 // let diaEnsolarado = false;
@@ -342,12 +350,51 @@ document.getElementById("meuBotao").addEventListener("click", function () {
 // }
 
 //! Estruturas Condicionais - Else-If:
-// let idadeMina = prompt("Qual a idade da sua Mina?")
+// let idadeMina = prompt("Qual a idade da sua Mina?");
 // let idadeMano = prompt(`Qual a sua idade, ${nome}?`);
 // if (idadeMina < idadeMano) {
-//   console.log(`Boa, ${nome}, Seu Pedófilo`)
+//   console.log(`Boa, ${nome}, Seu Pedófilo`);
 // } else if (idadeMina > idadeMano) {
-//   console.log(`Poxa, ${nome}, A Velha da Porsche`)
+//   console.log(`Poxa, ${nome}, A Velha da Porsche`);
 // } else {
-//   console.log(`Eita, ${nome}, Virou Viado`)
+//   console.log(`Eita, ${nome}, Virou Viado`);
 // }
+
+//* Exemplo de If, Else-If e Else:
+// let nota = prompt(`Digite sua nota, ${nome}: `)
+// if (nota > 10) {
+//   alert(`Viado, ${nome}, a maior nota é 10!`);
+// } else if (nota >= 7) {
+//   alert(`Boa, ${nome}, Você está aprovado!`);
+// } else if (nota >= 0) {
+//   alert(`Eita, ${nome}, Você está reprovado!`);
+// } else {
+//   alert(`Ameba, ${nome}, sua nota é menor que 0!`)
+// }
+
+//ToDo - Atividade 1: Calculando desconto de produto
+// let valorProd = prompt("Insira o preço do produto: ")
+// if (valorProd > 100) {
+//   let valorDesc = valorProd - (valorProd / 10)
+//   alert(`Você tem direito ao desconto, ${nome}! O valor com desconto será: ${valorDesc}`)
+// } else {
+//   alert(`Você não tem direito ao desconto, ${nome}! O valor original é de: ${valorProd}`)
+// }
+
+//ToDo - Atividade 2: Validando se o número é Par e Positivo
+// let numberDelta = prompt("Insira um número par e inteiro: ")
+// let numberDeltaMod = numberDelta % 2
+// if (numberDeltaMod == 0 && numberDelta >= 0) {
+//   alert(`Boa, ${nome}, o número ${numberDelta} é par e inteiro!`)
+// } else {
+//   alert(`O número ${numberDelta} não atende a condição, ${nome}!`)
+// }
+
+//ToDo - Atividade 3: Verificação de uma senha simples
+let senha = prompt("Insira a senha numérica: ")
+let i = 0
+if (senha == 1507) {
+  alert(`Acesso Liberado, Bem vindo ${nome}!`)
+} else while (i < 1) {
+  alert(`Acesso negado, ${nome}!!!`)
+  }
