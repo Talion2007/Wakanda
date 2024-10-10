@@ -9,6 +9,12 @@ document.getElementById("meuBotao").addEventListener("click", function () {
   document.getElementById("mensagem").innerText = mensagem;
 });
 
+//ToDo: Botão Secundário:
+let katana = `Talion Elessar, o Matador de Orcs, o Destruidor de Corações, o Caçador de Dragões, o Tirano Ditador, o Implacável Guerreiro, o Faz-Viúvas, o Espectro do Anel, a Sombra Mortal, o Furtivo-Matador, o Arqueiro Certeiro, a Espada Afiada, o Grande Matador`;
+document.getElementById("lenda").addEventListener("click", function () {
+  document.getElementById("katana").innerText = katana;
+});
+
 //Todo: Botão gerar:
 function gerar() {
   var resp = document.getElementById("resp");
@@ -373,12 +379,12 @@ function gerar() {
 // }
 
 //ToDo - Atividade 1: Calculando desconto de produto
-// let valorProd = prompt("Insira o preço do produto: ")
+// let valorProd = parseFloat(prompt("Insira o preço do produto: "))
 // if (valorProd > 100) {
-//   let valorDesc = valorProd - (valorProd / 10)
-//   alert(`Você tem direito ao desconto, ${nome}! O valor com desconto será: ${valorDesc}`)
+//   let valorDesc = parseFloat(valorProd - (valorProd / 10))
+//   alert(`Você tem direito ao desconto, ${nome}! O valor com desconto será: ${valorDesc.toFixed(2)}`)
 // } else {
-//   alert(`Você não tem direito ao desconto, ${nome}! O valor original é de: ${valorProd}`)
+//   alert(`Você não tem direito ao desconto, ${nome}! O valor original é de: ${valorProd.toFixed(2)}`)
 // }
 
 //ToDo - Atividade 2: Validando se o número é Par e Positivo
@@ -391,10 +397,65 @@ function gerar() {
 // }
 
 //ToDo - Atividade 3: Verificação de uma senha simples
-let senha = prompt("Insira a senha numérica: ")
-let i = 0
-if (senha == 1507) {
-  alert(`Acesso Liberado, Bem vindo ${nome}!`)
-} else while (i < 1) {
-  alert(`Acesso negado, ${nome}!!!`)
-  }
+// let senha = prompt("Insira a senha numérica: ");
+// let i = 0;
+// if (senha == 1507) {
+//   alert(`Acesso Liberado, Bem vindo ${nome}!`);
+// } else {
+//   while (i < 1) {
+//     alert(`Acesso negado, ${nome}!!!`);
+//   }
+// }
+
+//ToDo - Atividade 4: Sistema de cadastro de usuário
+// let idade = prompt("Insira sua idade: ");
+// if (idade >= 18) {
+//   alert(`Acesso Liberado, Vamos continuar seu cadastro, ${nome}!`);
+//   let email = prompt("insira sua email: ");
+//   let senha = prompt("Insira sua senha: ");
+//   if (email == "cagnin.lima.2007@gmail.com" && senha == "TalionElessar2007") {
+//     alert(`Cadastro bem sucessedido, ${nome}! Seja bem vindo!!!`);
+//   } else {
+//     alert(`Falha no Cadastro, ${nome}! Vá embora!!!`);
+//   }} else {
+//   alert(`Acesso negado, ${nome}! Você é de Menor!!!`);
+// }
+
+//ToDo - Atividade 4: Sistema de cadastro de usuário
+// let quantIngressos = parseFloat(prompt("Insira a quantidade de Ingressos que deseja: "))
+// let valorIngressos = (500 * quantIngressos)
+// if (quantIngressos >= 5) {
+//   let valorDesc = parseFloat(valorIngressos - (valorIngressos / 10))
+//   alert(`Você tem direito ao desconto, ${nome}! O valor com desconto será: ${valorDesc.toFixed(2)}`)
+// } else {
+//   alert(`Você não tem direito ao desconto, ${nome}! O valor total é de: ${valorProd.toFixed(2)}`)
+// }
+
+//! Condicional Avançada - Switch:
+// let dia = prompt("Helo");
+// switch (dia) {
+//   case 1:
+//     console.log("Domingo");
+//     break;
+//   case 2:
+//     console.log("Segunda");
+//     break;
+//   case 3:
+//     console.log("Terça");
+//     break;
+//   case 4:
+//     console.log("Quarta");
+//     break;
+//   case 5:
+//     console.log("Quinta");
+//     break;
+//   case 6:
+//     console.log("Sexta");
+//     break;
+//   case 7:
+//     console.log("Sabado");
+//     break;
+//   case 8:
+//     console.log("Vai Cagar, Gay");
+//     break;
+// }
