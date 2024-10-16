@@ -501,3 +501,11 @@ function gerar() {
 //   password = prompt("Digite a Senha Correta: ")
 // }
 // alert("Boa, Gay")
+
+//ToDo - Desafio 1: Cálculo de Fatorial
+// let total = 1
+// for (let fatorial = parseInt(prompt("Digite um Número: ")); fatorial > 0; fatorial--) {
+//   total *= fatorial
+// } 
+// alert(total)
+
