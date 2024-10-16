@@ -459,3 +459,5 @@ function gerar() {
 //     console.log("Vai Cagar, Gay");
 //     break;
 // }
+
+//! Estruturas de Repetições - For:
