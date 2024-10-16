@@ -15,11 +15,14 @@ document.getElementById("lenda").addEventListener("click", function () {
   document.getElementById("katana").innerText = katana;
 });
 
-//Todo: Botão gerar:
+//ToDo: Botão gerar:
 function gerar() {
   var resp = document.getElementById("resp");
   resp.innerHTML = Math.floor(100 * Math.random());
 }
+
+//ToDo: Zueira:
+// setTimeout(window.location.href = 'https://casasbahia.com.br/', 150);
 
 //! Concatenação: Juntando Strings com o +
 // let Mizu = "Kon'nichiwa​";
@@ -461,3 +464,40 @@ function gerar() {
 // }
 
 //! Estruturas de Repetições - For:
+// let totalNotas = 0;
+// let quantNotas = 4
+// for (let i = 1; i <= quantNotas; i++) {
+//   let nota = parseFloat(prompt(`Insira a Nota ${i}: `))
+//   totalNotas += nota
+// } alert(`Média das Notas: ${(totalNotas / quantNotas).toFixed(2)}`)
+
+//! Estruturas de Repetições - While:
+// let taxaEnzzoGay = 1;
+// while (taxaEnzzoGay < 100000000) {
+//   console.log("Enzzo Gay")
+// }
+
+//* Exercício 1 com While:
+// let multi = 1
+// while (multi <= 10) {
+//   console.log(multi*5)
+//   multi++
+// }
+
+//* Exercício 2 com While:
+// let num = 1
+// while (num <= 20) {
+//   if (num % 2 == 0) {
+//     console.log(`Número ${num} é par`)
+//   } else{
+//     console.log(`Número ${num} é impar`)
+//   }
+//   num++
+// }
+
+//* Exercício 3 com While:
+// let password = prompt("Digite a senha: ")
+// while (password !== "EnzzoGay") {
+//   password = prompt("Digite a Senha Correta: ")
+// }
+// alert("Boa, Gay")
