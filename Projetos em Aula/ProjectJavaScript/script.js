@@ -632,6 +632,13 @@ function gerar() {
 // })
 // console.log(frutasComNomesGrandesDemais)
 
+//? Como Somar Todos os Itens? 
+// let numeros  = [1,2,3,4,5]
+// let  soma = numeros.reduce(function(acumulador,numero) {
+//   return acumulador + numero
+//   })
+//   console.log(soma)
+
 //* Exercício 1 - Deixar os Itens em Maíusculo:
 // let frutas = ["Maça","Pêra","Banana","Abacaxi","Ameixa"]
 // let frutasMaiusculo = frutas.map(function(fruta){
@@ -649,11 +656,18 @@ function gerar() {
 // console.log(`Preços Originais: ${precos}`)
 // console.log(`Preços Descontados: ${churrasquinhoComDesconto}`)
 
-//* Exercício 3 - Filtrando Números Pares
+//* Exercício 3 - Filtrando Números Pares:
 // let numerinhos = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,17,18,19,20]
 // let numerinhosPares = numerinhos.filter(function(pares) {
-// if (pares % 2 == 0){
-//   return pares
-// }})
+//   return pares % 2 == 0
+// })
 // console.log(numerinhos)
 // console.log(numerinhosPares)
+
+// //* Exercício 4 - Filtrar os Alunos Aprovados:
+// let notas = [8,3,7,5,10,8,6,7,4,1]
+// let aprovados = notas.filter(function(nota,aluno) {
+//   console.log(`A Nota do Aluno ${aluno} é ${nota}`)
+//   return nota >= 7
+// })
+// console.log(`Alunos Aprovados: ${aprovados}`)
