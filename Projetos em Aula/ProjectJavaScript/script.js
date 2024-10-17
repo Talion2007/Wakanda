@@ -506,6 +506,77 @@ function gerar() {
 // let total = 1
 // for (let fatorial = parseInt(prompt("Digite um Número: ")); fatorial > 0; fatorial--) {
 //   total *= fatorial
-// } 
+// }
 // alert(total)
 
+//ToDo - Desafio 2: Números Primos
+// let numero = parseInt(prompt("Digite um Número: "));
+// let primo = 0;
+// for (let cont1 = 1; cont1 <= numero; cont1++) {
+//   let divisores = 0;
+//   for (let cont2 = 1; cont2 <= cont1; cont2++) {
+//     if (cont1 % cont2 == 0) {
+//       divisores++;
+//     }
+//   }
+//   if (divisores == 2) {
+//     primo++;
+//     alert(cont1);
+//   }
+// }
+// alert(`Total de números primos de 1 até ${numero} = ${primo}`);
+
+//ToDo - Desafio 3: Potenciação
+// let x = (parseInt(prompt("Digite um Número: ")))
+// let n = (parseInt(prompt("Digite o Expoente: ")))
+// let resultado = 1, i = 0;
+// while (i < n) {
+//   resultado *= x;
+//   i++
+// }
+// alert(`Resultado total: ${resultado}`)
+
+// //ToDo - Desafio 4 - A puta que te pariu
+// let execucao = "S";
+// while (execucao == "S" || execucao == "s") {
+//   alert(
+//   `  Conversão ºC para ºF - Opção 1
+//   Conversão ºF para ºC - Opção 2 
+//   Peso Ideal Para Homens - Opção 3 
+//   Peso Ideal Para Womens - Opção 4`
+//   );
+//   let opcao = parseInt(prompt("Insira a Opção Desejada: "));
+//   switch (opcao) {
+//     case 1:
+//       let tempCelciusI = parseFloat(prompt("Temperatura em ºC: "));
+//       let tempFireI = (9 * tempCelciusI + 160) / 5;
+//       alert(`Temperatura em ºF: ${tempFireI.toFixed(2)}`);
+//       break;
+//     case 2:
+//       let tempFireII = parseFloat(prompt("Temperatura em ºF: "));
+//       let tempCelciusII = ((tempFireII - 32) * 5) / 9;
+//       alert(`Temperatura em ºC: ${tempCelciusII.toFixed(2)}`);
+//       break;
+//     case 3:
+//       let alturaHomem = parseFloat(prompt("Altura do Macho: "));
+//       let pesoHomem = (72.7 * alturaHomem) - 58;
+//       alert(`O peso ideal é ${pesoHomem.toFixed(2)}`);
+//       break;
+//     case 4:
+//       let alturaFemea = parseFloat(prompt("Altura da Femea: "));
+//       let pesoFemea = (62.1 * alturaFemea) - 44.7;
+//       alert(`O peso ideal é ${pesoFemea.toFixed(2)}`);
+//       break;
+//     default:
+//       alert("Opção Inválida!");
+//   }
+//   execucao = prompt("Deseja Executar Novamente? (S/N): ");
+// }
+// alert("Valeu!!!");
+
+//! Arrays:
+// let frutas = ["Banana" , "Melão" , "Melancia", "Pitaya"]
+// console.log(frutas[0])
+// console.log(frutas[1])
+// console.log(frutas[2])
+// console.log(frutas[3])
