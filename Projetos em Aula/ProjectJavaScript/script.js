@@ -580,3 +580,43 @@ function gerar() {
 // console.log(frutas[1])
 // console.log(frutas[2])
 // console.log(frutas[3])
+
+//? Como saber a Quantidade de Itens no Array?
+// let gandalf = ["Mithrandir" , "The Gray" , "The White"]
+// console.log(`Nomes conhecidos de Gandalf: ${gandalf.length}`)
+
+//? Como adicionar itens no Array?
+// let tolkienBooks = ["Hobbit" , "O Senhor dos Anéis: A Companhia do Anel" , "O Senhor dos Anéis: As Duas Torres"]
+// console.log(`Livros do Tolkien: ${tolkienBooks}`)
+// tolkienBooks[3] = "O Senhor dos Anéis: O Retorno do Rei"
+// tolkienBooks[4] = "O Silmarillion"
+// console.log(`Livros do Tolkien: ${tolkienBooks}`)
+
+//? Como Concatenar Arrays?
+// let deserticas = ["Cactos","Suculentas"]
+// let frutiferas = ["Abacateiro","Cajueiro"]
+// let plantas = deserticas.concat(frutiferas)
+// console.log(`Plantas: ${plantas}`)
+
+//? Como mostrar os Itens Individualmente?
+// let frutas = ["Maça","Pêra","Banana","Abacaxi","Ameixa"]
+// frutas.forEach(function(fruta) {
+//   console.log(fruta)
+// })
+
+//? Como fazer para mostras Os Índices dos Itens Individuais?
+// let notas = [8,3,7,5,10,8,6,7,4,1]
+// let aprovados = 0, reprovados = 0
+// notas.forEach(function(nota,aluno) {
+//   console.log(`A Nota do Aluno ${aluno} é ${nota}`)
+//   if (nota > 7) {
+//     aprovados++
+//   } else {
+//     reprovados++
+//   }
+// })
+// console.log(`Alunos Aprovados: ${aprovados}`)
+// console.log(`Alunos Reprovados: ${reprovados}`)
+
+
+
