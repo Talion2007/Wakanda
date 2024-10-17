@@ -618,5 +618,26 @@ function gerar() {
 // console.log(`Alunos Aprovados: ${aprovados}`)
 // console.log(`Alunos Reprovados: ${reprovados}`)
 
+//? Como Adicionar Algo aos Itens?
+// let frutas = ["Maça","Pêra","Banana","Abacaxi","Ameixa"]
+// let frutasDelicia = frutas.map(function(fruta.) {
+//   return "Delícia de " + fruta
+// })
+// console.log(frutasDelicia)
 
+//* Exercício 1 - Deixar os Itens em Maíusculo:
+// let frutas = ["Maça","Pêra","Banana","Abacaxi","Ameixa"]
+// let frutasMaiusculo = frutas.map(function(fruta){
+// return fruta.toLocaleUpperCase()
+// })
+// console.log(frutasMaiusculo)
 
+//* Exercício 2 - Calculando 10% de Desconto:
+// let produtos = ["Picanha","Sal","Carvão"]
+// let precos = [100,15,40]
+// let churrasquinhoComDesconto = precos.map(function(preco){
+//   return preco * 0.9
+// })
+// console.log(`Produtos: ${produtos}`)
+// console.log(`Preços Originais: ${precos}`)
+// console.log(`Preços Descontados: ${churrasquinhoComDesconto}`)
