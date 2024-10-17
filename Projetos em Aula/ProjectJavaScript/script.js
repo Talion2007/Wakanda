@@ -620,10 +620,17 @@ function gerar() {
 
 //? Como Adicionar Algo aos Itens?
 // let frutas = ["Maça","Pêra","Banana","Abacaxi","Ameixa"]
-// let frutasDelicia = frutas.map(function(fruta.) {
+// let frutasDelicia = frutas.map(function(fruta) {
 //   return "Delícia de " + fruta
 // })
 // console.log(frutasDelicia)
+
+//? Como Filtrar os Itens?
+// let frutas = ["Maça","Pêra","Banana","Abacaxi","Ameixa"]
+// let frutasComNomesGrandesDemais = frutas.filter(function(fruta) {
+//   return fruta.length > 5
+// })
+// console.log(frutasComNomesGrandesDemais)
 
 //* Exercício 1 - Deixar os Itens em Maíusculo:
 // let frutas = ["Maça","Pêra","Banana","Abacaxi","Ameixa"]
@@ -641,3 +648,12 @@ function gerar() {
 // console.log(`Produtos: ${produtos}`)
 // console.log(`Preços Originais: ${precos}`)
 // console.log(`Preços Descontados: ${churrasquinhoComDesconto}`)
+
+//* Exercício 3 - Filtrando Números Pares
+// let numerinhos = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,17,18,19,20]
+// let numerinhosPares = numerinhos.filter(function(pares) {
+// if (pares % 2 == 0){
+//   return pares
+// }})
+// console.log(numerinhos)
+// console.log(numerinhosPares)
