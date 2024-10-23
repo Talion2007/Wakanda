@@ -541,8 +541,8 @@ function gerar() {
 // while (execucao == "S" || execucao == "s") {
 //   alert(
 //   `  Conversão ºC para ºF - Opção 1
-//   Conversão ºF para ºC - Opção 2 
-//   Peso Ideal Para Homens - Opção 3 
+//   Conversão ºF para ºC - Opção 2
+//   Peso Ideal Para Homens - Opção 3
 //   Peso Ideal Para Womens - Opção 4`
 //   );
 //   let opcao = parseInt(prompt("Insira a Opção Desejada: "));
@@ -580,6 +580,13 @@ function gerar() {
 // console.log(frutas[1])
 // console.log(frutas[2])
 // console.log(frutas[3])
+
+//! Functions:
+// function sayHello(Gay) {
+//   console.log(`Hellllllllllllllllou, It's Me you Looooooking For? I Can See in Your Eyes, Because ${Gay} is Gay!`);
+// }
+// sayHello("Enzzo");
+// sayHello("Vitor");
 
 //? Como saber a Quantidade de Itens no Array?
 // let gandalf = ["Mithrandir" , "The Gray" , "The White"]
@@ -632,12 +639,19 @@ function gerar() {
 // })
 // console.log(frutasComNomesGrandesDemais)
 
-//? Como Somar Todos os Itens? 
+//? Como Somar Todos os Itens?
 // let numeros  = [1,2,3,4,5]
 // let  soma = numeros.reduce(function(acumulador,numero) {
 //   return acumulador + numero
 //   })
 //   console.log(soma)
+
+//? Como Encontrar Itens Específicos?
+// let  numeros = [1,2,3,4,32,34,45,56]
+// let maiorQueCinco  = numeros.find(function(numero) {
+//   return numero > 5
+//   })
+//   console.log(maiorQueCinco)
 
 //* Exercício 1 - Deixar os Itens em Maíusculo:
 // let frutas = ["Maça","Pêra","Banana","Abacaxi","Ameixa"]
@@ -664,10 +678,125 @@ function gerar() {
 // console.log(numerinhos)
 // console.log(numerinhosPares)
 
-// //* Exercício 4 - Filtrar os Alunos Aprovados:
+//* Exercício 4 - Filtrar os Alunos Aprovados:
 // let notas = [8,3,7,5,10,8,6,7,4,1]
 // let aprovados = notas.filter(function(nota,aluno) {
 //   console.log(`A Nota do Aluno ${aluno} é ${nota}`)
 //   return nota >= 7
 // })
 // console.log(`Alunos Aprovados: ${aprovados}`)
+
+//* Exercício 5 - Encontrando o Primeiro Produto Caro:
+// let precos =  [100,15,40,50,60,70,80,90,100,110,300]
+// let  produtoMaisCaro = precos.find (function(preco) {
+//   return preco > 100;
+// })
+// console.log(produtoMaisCaro)
+
+//* Exercício 6 - Encontrando o Primeiro Aluno Aprovado:
+// let notaAlunos  = [8,3,7,5,10,8,6,7,4,9]
+// let alunoAprovado = notaAlunos.find(function(aluno) {
+//   return aluno >= 7
+//   }); console.log(alunoAprovado)
+
+//! Objects:
+// let pessoa  = {
+//   nome: "Carlos",
+//   idade: 25,
+//   cidade: "São Paulo"
+//   }
+//   console.log(`Dados do ${pessoa.nome}`)
+//   console.log(pessoa)
+//   pessoa.cidade =  "Rio de Janeiro"
+//   pessoa.profissao = "Desenvolvedor"
+//   console.log(`Novos Dados do ${pessoa.nome}:`)
+//   console.log(pessoa)
+
+//? Como usar Objects em Objects?
+// const garagem = {
+//   carroUm: {
+//     marca: "Ferrari",
+//     cor: "Vermelho Foquete",
+//     velocidade: "300km/h",
+//   },
+//   carroDois: {
+//     marca: "Fusca",
+//     cor: "Azul Nostalgia",
+//     velocidade: "80km/h",
+//   },
+// };
+// console.log(garagem.carroUm);
+// console.log(garagem.carroDois);
+
+//! Arrow Functions:
+// const cumprimentar = () => {
+//   let nominho = "Carlão";
+//   console.log(`Olá ${nominho}`);
+// };
+// console.log(cumprimentar);
+
+//? Como Utilizar Funções na Pratica?
+// let produtos = [];
+// function cadastrarProduto(nome,preco,quantidade) {
+//   let produto = {
+//     nome: nome,
+//     preco: preco,
+//     quantidade: quantidade
+//   }
+//   produtos.push(produto);
+//   console.log(produto);
+//   }
+// function listarProdutos() {
+//   console.log("Lista de Produtos:");
+//   produtos.forEach(function(produto) {
+//     console.log(`${produto.nome} - R$${produto.preco.toFixed(2)} - Quantidade: ${produto.quantidade}`);
+//   })
+// }
+// function ordenarPorPreco()  {
+//   produtos.sort(function(a,b) {
+//     return a.preco - b.preco
+//     });
+//   console.log("Produtos Ordenados por Preço")
+//   }
+//   cadastrarProduto("Notebook", 2500.0,10)
+//   cadastrarProduto("Smartphone", 1500.0, 20)
+//   cadastrarProduto("Tablet", 1200.10, 15)
+//   listarProdutos()
+//   ordenarPorPreco()
+//   listarProdutos()
+
+//* Exercício 1 - Cadastrando carros:
+let garagem = [];
+function cadastrarCarro(marca, modelo, ano, cor) {
+  let carro = {
+    marca: marca,
+    modelo: modelo,
+    ano: ano,
+    cor: cor,
+  };
+  garagem.push(carro);
+  console.log(carro);
+}
+function listarCarros() {
+  console.log("Lista de Produtos:");
+  garagem.forEach(function (carro) {
+    console.log(
+      `Marco: ${carro.marca} - Modelo: ${carro.modelo} - Ano: ${carro.ano} - Cor: ${carro.cor}`
+    );
+  });
+}
+function ordenarPorAno() {
+  garagem.sort(function (a, b) {
+    return a.ano - b.ano;
+  });
+  console.log("Carros ordenados por Ano");
+}
+cadastrarCarro("Fiat", "Fiat Uno", 2015, "Vermelho");
+cadastrarCarro("Chevrolet", "Celta", 2010, "Azul");
+cadastrarCarro("Volkswagen", "Gol", 2018, "Amarelo");
+cadastrarCarro("Honda", "Civic", 2012, "Preto");
+cadastrarCarro("Toyota", "Corolla", 2016, "Branco");
+cadastrarCarro("Ford", "Fusion", 2014, "Roxo");
+cadastrarCarro("Mustang", "Mustang", 2019, "Prata");
+ordenarPorAno();
+listarCarros();
