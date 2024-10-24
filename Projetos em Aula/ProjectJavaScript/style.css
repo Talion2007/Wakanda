@@ -4,6 +4,22 @@ body {
   text-align: center;
 }
 
+h1 {
+  width: 100%;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  article {
+    width: 40%;
+    margin: 5%;
+  }
+  button {
+    width: 100%;
+  }
+}
+
 button {
   background-color: palevioletred;
   color: white;
