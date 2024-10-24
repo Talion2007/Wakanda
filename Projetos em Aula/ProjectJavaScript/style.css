@@ -1,11 +1,11 @@
 body {
   background-color: darkslategray;
-  color: rebeccapurple;
+  color: palevioletred;
   text-align: center;
 }
 
 button {
-  background-color: rebeccapurple;
+  background-color: palevioletred;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -16,5 +16,5 @@ button {
 }
 
 button:hover {
-  background-color: purple;
+  background-color: plum;
 }
