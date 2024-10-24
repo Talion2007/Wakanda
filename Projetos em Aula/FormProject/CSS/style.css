@@ -1,0 +1,14 @@
+body {
+    background-color: #91cfd7;
+}
+
+fieldset {
+    display:flex; 
+    flex-direction: row;
+    img {
+        width: 25%;
+    }
+    form {
+        width: 100%;
+    }
+}

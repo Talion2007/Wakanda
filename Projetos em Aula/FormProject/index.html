@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/style.css" rel="stylesheet" <title>Form IMC</title>
+</head>
+
+<body>
+    <center>
+        <h1>Formulário de Inscrição</h1>
+        <fieldset>
+            <form action="submit.html" method="get">
+                <p>Indice de Massa Corporal</p>
+                <p>Nome:
+                    <label for="nome"></label>
+                    <input type="text" id="nome" name="nome" placeholder="name" required>
+                </p>
+
+                <p>Peso: 
+                    <label for="peso"></label>
+                    <input type="number" id="peso" placeholder="kg" age min="10" max="250" required>
+                </p>
+
+                <p>Altura: 
+                <label for="altura"></label>
+                <input type="number" id="altura" placeholder="cm" age min="100" max="250" required>
+                </p>
+                <hr>
+                <input type="submit" value="Manda Pra Lá" />
+            </form>
+            <img src="Assets/saudizinha.jfif">
+        </fieldset>
+    </center>
+</body>
+
+</html>
