@@ -4,35 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="CSS/style.css" rel="stylesheet" <title>Form IMC</title>
+    <link href="CSS/style.css" rel="stylesheet">
+    <title>Form IMC</title>
 </head>
 
 <body>
-    <center>
         <h1>Formulário de Inscrição</h1>
         <fieldset>
-            <form action="submit.html" method="get">
-                <p>Indice de Massa Corporal</p>
-                <p>Nome:
-                    <label for="nome"></label>
-                    <input type="text" id="nome" name="nome" placeholder="name" required>
-                </p>
-
-                <p>Peso: 
-                    <label for="peso"></label>
+            <section>
+                <form id="FormOne">
+                    <p>Indice de Massa Corporal</p>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" placeholder="name" required>
+                    <label for="peso">Peso:</label>
                     <input type="number" id="peso" placeholder="kg" age min="10" max="250" required>
+                    <label for="altura">Altura:</label>
+                    <input type="number" id="altura" placeholder="cm" age min="100" max="250" required>
+                </form>
+
+                <p>Submit:
+                    <button onclick="calcular()">Calcular</button>
                 </p>
 
-                <p>Altura: 
-                <label for="altura"></label>
-                <input type="number" id="altura" placeholder="cm" age min="100" max="250" required>
-                </p>
-                <hr>
-                <input type="submit" value="Manda Pra Lá" />
-            </form>
+                <article id="IMCresult">
+                    Índice de Massa Corporal:
+                </article>
+                <article id="IMCcategory">
+                    Categoria:
+                </article>
+            </section>
+
             <img src="Assets/saudizinha.jfif">
         </fieldset>
-    </center>
+    <script src="JavaScript/script.js"></script>
 </body>
 
 </html>
