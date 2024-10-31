@@ -1,14 +1,17 @@
-* {
-    box-sizing: border-box;
-  }
+body {
+  margin: 0%;
+  background-color: darkslategrey;
+}
   
   /* Position the image container (needed to position the left and right arrows) */
-  .container {
+  section {
     position: relative;
+    margin: 0%;
+    width: 100%;
   }
   
   /* Hide the images by default */
-  .mySlides {
+  article {
     display: none;
   }
   
@@ -57,9 +60,9 @@
   
   /* Container for image text */
   .caption-container {
+    margin: 0%;
     text-align: center;
     background-color: #222;
-    padding: 2px 16px;
     color: white;
   }
   
