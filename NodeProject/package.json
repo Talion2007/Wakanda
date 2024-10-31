@@ -1,0 +1,15 @@
+{
+  "name": "nodeproject",
+  "version": "1.0.0",
+  "description": "Teste",
+  "main": "hworld.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node  hworld.js"
+  },
+  "author": "Felps",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
