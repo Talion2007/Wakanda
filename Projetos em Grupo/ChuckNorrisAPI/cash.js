@@ -5,9 +5,15 @@
       axios.get(url) 
         .then(function(response) { 
           const eita = response.data; 
+          console.log("---------------")
           console.log(`Category: ${category}`); 
-          console.log(`Create at: ${eita.created_at}`); 
+          console.log(`Created at: ${eita.created_at}`); 
+          console.log(`Updated at: ${eita.updated_at}`); 
+          console.log(`Icon URL: ${eita.icon_url}`); 
+          console.log(`URL: ${eita.url}`); 
+          console.log("")
           console.log(`Value: ${eita.value}`); 
+          console.log("---------------")
           console.log("")
         }) 
         .catch(function(error) { 
@@ -30,4 +36,3 @@
     jokes('science');
     jokes('sport');
     jokes('travel');
-     
