@@ -27,7 +27,7 @@ exports.getAllUsers = (callback) => {
         nome: columns[1].value,
         email: columns[2].value,
         telefone: columns[3].value,
-        datanasc: columns[4].value
+        datanasc: columns[4].value,
       });
     });
 
@@ -51,7 +51,7 @@ exports.createUser = (data, callback) => {
     }
 
     //! Consulta SQL para inserir um novo usuário
-    const query = `INSERT INTO Alunos (rm,nome,idade,turma) VALUES (@rm,@nome,@idade,@turma)`;
+    const query = `INSERT INTO PROFESSORES (CPF,NOME,EMAIL,TELEFONE,DATANASC) VALUES (@cpf,@nome,@email,@telefone,@datanasc)`;
 
     const request = new Request(query, (err) => {
       if (err) {
@@ -61,10 +61,11 @@ exports.createUser = (data, callback) => {
       }
     });
     // Adiciona os parâmetros necessários para a inserção
-    request.addParameter("rm", TYPES.Int, data.rm);
+    request.addParameter("cpf", TYPES.VarChar, data.cpf);
     request.addParameter("nome", TYPES.VarChar, data.nome);
-    request.addParameter("idade", TYPES.Int, data.idade);
-    request.addParameter("turma", TYPES.VarChar, data.turma);
+    request.addParameter("email", TYPES.VarChar, data.email);
+    request.addParameter("telefone", TYPES.VarChar, data.telefone);
+    request.addParameter("datanasc", TYPES.Date, data.datanasc);
 
     connection.execSql(request); // Executa a consulta
   });
@@ -73,7 +74,7 @@ exports.createUser = (data, callback) => {
 };
 
 //! Função para atualizar um usuário existente
-exports.updateUser = (rm, nome, idade, turma, callback) => {
+exports.updateUser = (cpf, nome, email, telefone, datanasc, callback) => {
   const connection = createConnection(); // Cria a conexão com o banco de dados
 
   connection.on("connect", (err) => {
@@ -81,7 +82,7 @@ exports.updateUser = (rm, nome, idade, turma, callback) => {
       return callback(err, null); // Trata erros de conexão
     }
     // Consulta SQL para atualizar o nome do usuário pelo ID
-    const query = `UPDATE Alunos SET nome = '${nome}', idade = '${idade}', turma = '${turma}' WHERE rm = '${rm}';`;
+    const query = `UPDATE PROFESSORES SET NOME = '${nome}', EMAIL = '${email}', TELEFONE = '${telefone}', DATANASC = '${datanasc}' WHERE CPF = '${cpf}';`;
     const request = new Request(query, (err) => {
       if (err) {
         callback(err); // Chama a função callback com erro se houver falha
@@ -96,7 +97,7 @@ exports.updateUser = (rm, nome, idade, turma, callback) => {
 };
 
 //! Função para deletar um usuário existente
-exports.deleteUser = (rm, callback) => {
+exports.deleteUser = (cpf, callback) => {
   const connection = createConnection(); // Cria a conexão com o banco de dados
 
   connection.on("connect", (err) => {
@@ -105,7 +106,7 @@ exports.deleteUser = (rm, callback) => {
     }
 
     // Consulta SQL para deletar o usuário pelo ID
-    const query = `DELETE FROM Alunos WHERE rm = ${rm}`;
+    const query = `DELETE FROM PROFESSORES WHERE CPF = ${cpf}`;
     const request = new Request(query, (err) => {
       if (err) {
         callback(err); // Chama a função callback com erro se houver falha
@@ -119,44 +120,62 @@ exports.deleteUser = (rm, callback) => {
   connection.connect(); // Inicia a conexão
 };
 
-//! Função para selecionar um usuário existente
-exports.selectUser = (rm, callback) => {
-  const connection = createConnection(); // Cria a conexão com o banco de dados
+//! Função para selecionar um usuário existente por CPF
+exports.selectUserCPF = (cpf, callback) => {
+  const connection = createConnection();
+  connection.on('connect', err => {
+      if (err) return callback(err, null);
 
-  connection.on("connect", (err) => {
-    if (err) {
-      return callback(err, null); // Trata erros de conexão
-    }
-
-    // Consulta SQL para deletar o usuário pelo ID
-    const query = `SELECT * FROM Alunos WHERE rm = ${rm}`;
-    const request = new Request(query, (err, rowCount) => {
-      if (err) {
-        return callback(err, null); // Trata erros de execução da consulta
-      }
-
-      if (rowCount === 0) {
-        return callback(null, []); // Retorna um array vazio se não houver registros
-      }
-    });
-
-    const result = [];
-    request.on("row", (columns) => {
-      result.push({
-        rm: columns[0].value,
-        nome: columns[1].value,
-        idade: columns[2].value,
-        turma: columns[3].value,
+      const query = `SELECT * FROM PROFESSORES WHERE CPF = @cpf`; // Consulta SQL para buscar aluno por RM
+      const request = new Request(query, (err) => {
+          if (err) return callback(err, null);
       });
-    });
 
-    // Ao completar a consulta, retorna o array com todos os usuários
-    request.on("requestCompleted", () => {
-      callback(null, result); // Retorna o array de resultados
-    });
+      request.addParameter('cpf', TYPES.VarChar, cpf); // Define o parâmetro RM como um inteiro
 
-    connection.execSql(request); // Executa a consulta
+      let professor = null; // Variável para armazenar o aluno encontrado
+      request.on('row', columns => {
+          professor = {
+            cpf: columns[0].value,
+            nome: columns[1].value,
+            email: columns[2].value,
+            telefone: columns[3].value,
+            datanasc: columns[4].value,
+          };
+      });
+
+      request.on('requestCompleted', () => callback(null, professor)); // Retorna o aluno encontrado
+      connection.execSql(request);
   });
+  connection.connect();
+}
 
-  connection.connect(); // Inicia a conexão
-};
+//! Função para selecionar um usuário existente por Nome
+exports.selectUserNOME = (nome, callback) => {
+  const connection = createConnection();
+    connection.on('connect', err => {
+        if (err) return callback(err, null);
+
+        const query = `SELECT * FROM PROFESSORES WHERE NOME = @nome`; // Consulta SQL para buscar aluno por RM
+        const request = new Request(query, (err) => {
+            if (err) return callback(err, null);
+        });
+
+        request.addParameter('nome', TYPES.VarChar, nome); // Define o parâmetro RM como um inteiro
+
+        let professor = null; // Variável para armazenar o aluno encontrado
+        request.on('row', columns => {
+            professor = {
+              cpf: columns[0].value,
+              nome: columns[1].value,
+              email: columns[2].value,
+              telefone: columns[3].value,
+              datanasc: columns[4].value,
+            };
+        });
+
+        request.on('requestCompleted', () => callback(null, professor)); // Retorna o aluno encontrado
+        connection.execSql(request);
+    });
+    connection.connect();
+}
