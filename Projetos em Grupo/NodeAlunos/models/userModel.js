@@ -26,7 +26,7 @@ exports.getAllUsers = (callback) => {
         rm: columns[0].value,
         nome: columns[1].value,
         idade: columns[2].value,
-        turma: columns[3].value
+        turma: columns[3].value,
       });
     });
 
@@ -115,5 +115,47 @@ exports.deleteUser = (rm, callback) => {
 
     connection.execSql(request); // Executa a remoção no banco de dados
   });
+  connection.connect(); // Inicia a conexão
+};
+
+//! Função para selecionar um usuário existente
+exports.selectUser = (rm, callback) => {
+  const connection = createConnection(); // Cria a conexão com o banco de dados
+
+  connection.on("connect", (err) => {
+    if (err) {
+      return callback(err, null); // Trata erros de conexão
+    }
+
+    // Consulta SQL para deletar o usuário pelo ID
+    const query = `SELECT * FROM Alunos WHERE rm = ${rm}`;
+    const request = new Request(query, (err, rowCount) => {
+      if (err) {
+        return callback(err, null); // Trata erros de execução da consulta
+      }
+
+      if (rowCount === 0) {
+        return callback(null, []); // Retorna um array vazio se não houver registros
+      }
+    });
+
+    const result = [];
+    request.on("row", (columns) => {
+      result.push({
+        rm: columns[0].value,
+        nome: columns[1].value,
+        idade: columns[2].value,
+        turma: columns[3].value,
+      });
+    });
+
+    // Ao completar a consulta, retorna o array com todos os usuários
+    request.on("requestCompleted", () => {
+      callback(null, result); // Retorna o array de resultados
+    });
+
+    connection.execSql(request); // Executa a consulta
+  });
+
   connection.connect(); // Inicia a conexão
 };

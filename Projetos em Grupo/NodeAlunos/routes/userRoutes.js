@@ -13,5 +13,8 @@ router.put('/alunos/:rm', userController.updateAlunos);
  
 // Rota DELETE para remover um usuário 
 router.delete('/alunos/:rm', userController.deleteAlunos);
+
+// Rota GET para listar todos os usuários 
+router.get('/alunos/:rm', userController.getAlunoByRm); 
  
 module.exports = router; 

@@ -46,3 +46,14 @@ exports.deleteAlunos = (req, res) => {
         } 
     }); 
 };
+
+exports.getAlunoByRm = (req, res) => { 
+    const { rm } = req.params;  // Extrai o ID dos parâmetros da URL 
+    userModel.selectUser(rm, (err, alunos) => { 
+        if (err) { 
+            res.status(500).send('Erro ao buscar usuário');  // Retorna um erro 500 se algo deu errado 
+        } else { 
+            res.json(alunos);  // Retorna os usuários em formato JSON 
+        } 
+    }); 
+}; 
