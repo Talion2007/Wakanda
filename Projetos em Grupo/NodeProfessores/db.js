@@ -11,7 +11,7 @@ server: 'localhost',  // Nome do servidor (pode ser 'localhost' ou um endereço 
         } 
     }, 
     options: { 
-        database: 'LEGENDARY',      // Nome do banco de dados 
+        database: 'OPTIMUS',      // Nome do banco de dados 
         encrypt: false,          // Desativar criptografia (pode mudar se necessário) 
         port: 1433,              // Porta padrão do SQL Server 
         trustServerCertificate: true // Necessário para evitar erro de SSL em ambiente local 
