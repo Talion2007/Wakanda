@@ -1,60 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <center>
-    <h1>Buscar Endereço por CEP</h1>
-    <input type="text" id="cep" placeholder="Digite o CEP" />
-    <button onclick="buscarEndereco()">Buscar</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>PokeInfo</title>
+</head>
 
-    <div id="enderecoInfo" class="enderecoInfo" style="display: none">
-      <p><strong>Logradouro: </strong><span id="logradouro"></span></p>
-      <p><strong>Bairro: </strong><span id="bairro"></span></p>
-      <p><strong>Cidade: </strong><span id="localidade"></span></p>
-      <p><strong>Estado: </strong><span id="uf"></span></p>
-      <p><strong>Região: </strong><span id="regiao"></span></p>
-      <p id="erroMensagem" style="color: red; display: none"></p>
-    </div>
-    </center>
+<body>
+  <header>
+  <h1>Search Pokemon</h1>
+  <input type="text" id="pokemonName" placeholder="DIGITE O NOME OU ID DO POKEMON" />
+  <button onclick="fetchPokemon()">SEARCH</button>
+  </header>
 
-    <script>
-      async function buscarEndereco() {
-        const cep = document.getElementById("cep").value.trim();
-        if (!cep) {
-          alert("DIGITA A PORRA DO CEP, FILHO DE UMA P*TA!!!");
-          return;
-        }
+  <section>
+  <p id="loadingMessage" style="display: none;">Loading...</p>
+  <div id="errorMessage" style="display: none;"></div>
 
-        try {
-          const response = await fetch(
-            `http://localhost:3000/endereco/${cep}`
-          );
-          if (!response.ok) {
-            throw new Error("CEP NÃO ENCONTRADO");
-          }
-          const data = await response.json();
-          console.log(data);
 
-          document.getElementById("logradouro").textContent =
-            data.logradouro || "N/A";
-          document.getElementById("bairro").textContent = data.bairro || "N/A";
-          document.getElementById("localidade").textContent =
-            data.localidade || "N/A";
-          document.getElementById("uf").textContent = data.uf || "N/A";
-          document.getElementById("regiao").textContent = data.regiao || "N/A";
-          document.getElementById("enderecoInfo").style.display = "block";
-          document.getElementById("erroMensagem").style.display = "none";
-        } catch (error) {
-          document.getElementById("erroMensagem").textContent = error.message;
-          document.getElementById("enderecoInfo").style.display = "none";
-          document.getElementById("erroMensagem").style.display = "block";
-        }
+  <div class="pokemon-inf" id="pokemonInfo" style="display: none;">
+    <h2 id="pokemonTitle"></h2>
+
+    <article>
+      <img id="pokemonImage" src="" alt="Imagem del Pokemon" />
+      <img id="pokemonImageBack" src="" alt="Imagem del Pokemon" />
+    </article>
+
+    <p><strong>Height: </strong> <span id="pokemonHeight"></span> meters</p>
+    <p><strong>Weight: </strong> <span id="pokemonWeight"></span> kilograms</p>
+    <p><strong>Abilities: </strong> <span id="pokemonAbilities"></span></p>
+    <p><strong>Types: </strong> <span id="pokemonTypes"></span></p>
+    <p><strong>Stats: </strong> <span id="pokemonStats"></span></p>
+
+    <article>
+      <img id="pokemonImageShiny" src="" alt="Imagem del Pokemon" /> 
+      <img id="pokemonImageShinyBack" src="" alt="Imagem del Pokemon" />
+    </article>
+
+    <p><strong>Moves: </strong> <span id="pokemonMoves"></span></p>
+
+  </div>
+  </section>
+
+  <script>
+    async function fetchPokemon() {
+      const pokemonName = document.getElementById("pokemonName").value.trim();
+      if (!pokemonName) {
+        document.getElementById("errorMessage").textContent = " PLEASE ENTER A POKEMON NAME OR ID";
+        document.getElementById("errorMessage").style.display = "block";
       }
-    </script>
-  </body>
+
+      document.getElementById("errorMessage").style.display = "none";
+      document.getElementById("loadingMessage").style.display = "block";
+
+      try {
+
+        const response = await fetch(
+          `http://localhost:3000/pokemon/${pokemonName.toLowerCase()}`
+        );
+
+        if (!response.ok) throw new Error("POKEMON NOT FOUND");
+
+        const data = await response.json();
+        console.log(data);
+
+        document.getElementById("pokemonInfo").style.display = "block";
+        document.getElementById("pokemonTitle").textContent = data.name.toUpperCase();
+
+        document.getElementById("pokemonImage").src = data.image;
+        document.getElementById("pokemonImage").alt = `Image of ${data.name}`;
+        document.getElementById("pokemonImageBack").src = data.imageBack;
+        document.getElementById("pokemonImageBack").alt = `Image of ${data.name}`;
+        document.getElementById("pokemonImageShiny").src = data.imageShiny;
+        document.getElementById("pokemonImageShiny").alt = `Image of ${data.name}`;
+        document.getElementById("pokemonImageShinyBack").src = data.imageShinyBack;
+        document.getElementById("pokemonImageShinyBack").alt = `Image of ${data.name}`;
+
+
+        document.getElementById("pokemonHeight").textContent = data.height;
+        document.getElementById("pokemonWeight").textContent = data.weight;
+        document.getElementById("pokemonAbilities").textContent = data.abilities;
+        document.getElementById("pokemonTypes").textContent = data.types;
+        document.getElementById("pokemonMoves").textContent = data.moves;
+        document.getElementById("pokemonStats").textContent = data.stats;
+
+      } catch (error) {
+
+        document.getElementById("errorMessage").textContent = error.message;
+        document.getElementById("errorMessage").style.display = "block";
+        document.getElementById("pokemonInfo").style.display = "none";
+
+      } finally {
+
+        document.getElementById("loadingMessage").style.display = "none";
+
+      }
+    }
+  </script>
+</body>
+
 </html>
