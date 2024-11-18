@@ -1,104 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>PokeInfo</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css">
-  <title>PokeInfo</title>
-</head>
+  <body>
+    <header>
+      <h1>Search Pokemon</h1>
+      <input
+        type="text"
+        id="pokemonName"
+        placeholder="DIGITE O NOME OU ID DO POKEMON"
+        onkeypress="searchKey()"
+      />
+      <button onclick="prevPokemon()"><</button>
+      <button onclick="fetchPokemon()">SEARCH</button>
+      <button onclick="nextPokemon()">></button>
+    </header>
 
-<body>
-  <header>
-  <h1>Search Pokemon</h1>
-  <input type="text" id="pokemonName" placeholder="DIGITE O NOME OU ID DO POKEMON" />
-  <button onclick="fetchPokemon()">SEARCH</button>
-  </header>
+    <section>
+      <p id="loadingMessage" style="display: none">Loading...</p>
+      <div id="errorMessage" style="display: none"></div>
 
-  <section>
-  <p id="loadingMessage" style="display: none;">Loading...</p>
-  <div id="errorMessage" style="display: none;"></div>
+      <div class="pokemon-inf" id="pokemonInfo" style="display: none">
+        <article>
+          <h2 id="pokemonTitle"></h2>
+          <h2><text>ID: </text> <span id="pokemonId"></span></h2>
+        </article>
 
+        <div id="slider">
+          <article>
+          <img id="pokemonImage" src="" alt="Imagem del Pokemon" />
+          <img id="pokemonImageBack" src="" alt="Imagem del Pokemon" />
+          </article>
 
-  <div class="pokemon-inf" id="pokemonInfo" style="display: none;">
-    <h2 id="pokemonTitle"></h2>
+          <article>
+            <img id="pokemonImageShiny" src="" alt="Imagem del Pokemon" />
+            <img id="pokemonImageShinyBack" src="" alt="Imagem del Pokemon" />
+          </article>
+        </div>
 
-    <article>
-      <img id="pokemonImage" src="" alt="Imagem del Pokemon" />
-      <img id="pokemonImageBack" src="" alt="Imagem del Pokemon" />
-    </article>
+        <button id="NextPic" class="btn">VIEW SHINY</button>
 
-    <p><strong>Height: </strong> <span id="pokemonHeight"></span> meters</p>
-    <p><strong>Weight: </strong> <span id="pokemonWeight"></span> kilograms</p>
-    <p><strong>Abilities: </strong> <span id="pokemonAbilities"></span></p>
-    <p><strong>Types: </strong> <span id="pokemonTypes"></span></p>
-    <p><strong>Stats: </strong> <span id="pokemonStats"></span></p>
+        <article>
+          <p><strong>Order: </strong> <span id="pokemonOrder"></span> </p>
+          <p><strong>Types: </strong> <span id="pokemonTypes"></span></p>
+          <p><strong>Base Experience: </strong> <span id="pokemonBaseExperience"></span></p>
+          <p><strong>Height: </strong> <span id="pokemonHeight"></span> meters</p>
+          <p><strong>Weight: </strong> <span id="pokemonWeight"></span> kilograms</p>
+          <p><strong>Abilities: </strong> <span id="pokemonAbilities"></span></p>
+          <p><strong>Stats: </strong> <span id="pokemonStats"></span></p>
+          <p><strong>Held Items: </strong> <span id="pokemonHeldItems"></span></p>
+        <p><strong>Moves: </strong> <span id="pokemonMoves"></span></p>
+        </article>
+      </div>
+    </section>
 
-    <article>
-      <img id="pokemonImageShiny" src="" alt="Imagem del Pokemon" /> 
-      <img id="pokemonImageShinyBack" src="" alt="Imagem del Pokemon" />
-    </article>
-
-    <p><strong>Moves: </strong> <span id="pokemonMoves"></span></p>
-
-  </div>
-  </section>
-
-  <script>
-    async function fetchPokemon() {
-      const pokemonName = document.getElementById("pokemonName").value.trim();
-      if (!pokemonName) {
-        document.getElementById("errorMessage").textContent = " PLEASE ENTER A POKEMON NAME OR ID";
-        document.getElementById("errorMessage").style.display = "block";
-      }
-
-      document.getElementById("errorMessage").style.display = "none";
-      document.getElementById("loadingMessage").style.display = "block";
-
-      try {
-
-        const response = await fetch(
-          `http://localhost:3000/pokemon/${pokemonName.toLowerCase()}`
-        );
-
-        if (!response.ok) throw new Error("POKEMON NOT FOUND");
-
-        const data = await response.json();
-        console.log(data);
-
-        document.getElementById("pokemonInfo").style.display = "block";
-        document.getElementById("pokemonTitle").textContent = data.name.toUpperCase();
-
-        document.getElementById("pokemonImage").src = data.image;
-        document.getElementById("pokemonImage").alt = `Image of ${data.name}`;
-        document.getElementById("pokemonImageBack").src = data.imageBack;
-        document.getElementById("pokemonImageBack").alt = `Image of ${data.name}`;
-        document.getElementById("pokemonImageShiny").src = data.imageShiny;
-        document.getElementById("pokemonImageShiny").alt = `Image of ${data.name}`;
-        document.getElementById("pokemonImageShinyBack").src = data.imageShinyBack;
-        document.getElementById("pokemonImageShinyBack").alt = `Image of ${data.name}`;
-
-
-        document.getElementById("pokemonHeight").textContent = data.height;
-        document.getElementById("pokemonWeight").textContent = data.weight;
-        document.getElementById("pokemonAbilities").textContent = data.abilities;
-        document.getElementById("pokemonTypes").textContent = data.types;
-        document.getElementById("pokemonMoves").textContent = data.moves;
-        document.getElementById("pokemonStats").textContent = data.stats;
-
-      } catch (error) {
-
-        document.getElementById("errorMessage").textContent = error.message;
-        document.getElementById("errorMessage").style.display = "block";
-        document.getElementById("pokemonInfo").style.display = "none";
-
-      } finally {
-
-        document.getElementById("loadingMessage").style.display = "none";
-
-      }
-    }
-  </script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
