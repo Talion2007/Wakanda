@@ -16,13 +16,15 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+const PORT = 7000;
+
 const currentID = 1;
 
 async function init() {
   const initID = 25;
 
   try {
-    const response = await fetch(`http://localhost:4000/pokemon/${initID}`);
+    const response = await fetch(`http://localhost:${PORT}/pokemon/${initID}`);
 
     if (!response.ok) {
       throw new Error(`Error fetching Pokemon: ${response.statusText}`);
@@ -79,14 +81,14 @@ init();
 async function fetchTop10Pokemon() {
   const pokemonListElement = document.getElementById ("pokemonList");
 
-  for (let i = 1; i <= 1000; i++) {
+  for (let i = 1; i <= 1025; i++) {
 
     document.getElementById("listSection").style.display = "block";
 
-    if (i == 1000) break;
+    if (i == 1025) break;
 
     try {
-        const response = await fetch (`http://localhost:4000/pokemon/${i}`);
+        const response = await fetch (`http://localhost:${PORT}/pokemon/${i}`);
         if (!response.ok) throw new Error ("Erro ao buscar dados do Pokémon :(")
 
         const data = await response.json();
@@ -136,7 +138,7 @@ async function fetchPokemon(currentID) {
 
   try {
     const response = await fetch(
-      `http://localhost:4000/pokemon/${pokemonName.toLowerCase()}`
+      `http://localhost:${PORT}/pokemon/${pokemonName.toLowerCase()}`
     );
 
     if (!response.ok) {
@@ -198,7 +200,7 @@ async function nextPokemon(currentID) {
   currentID = nextID;
 
   try {
-    const response = await fetch(`http://localhost:4000/pokemon/${nextID}`);
+    const response = await fetch(`http://localhost:${PORT}/pokemon/${nextID}`);
 
     if (!response.ok) {
       throw new Error(`Error fetching Pokemon: ${response.statusText}`);
@@ -256,7 +258,7 @@ async function prevPokemon(currentID) {
   currentID = nextID;
 
   try {
-    const response = await fetch(`http://localhost:4000/pokemon/${nextID}`);
+    const response = await fetch(`http://localhost:${PORT}/pokemon/${nextID}`);
 
     if (!response.ok) {
       throw new Error(`Error fetching Pokemon: ${response.statusText}`);
