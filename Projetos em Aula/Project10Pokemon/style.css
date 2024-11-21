@@ -1,0 +1,40 @@
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: rgb(101, 47, 151);
+}
+
+.pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    /*define o espaçamento entre as linhas e colunas de um grid ou flexbox */
+    background-color: rgb(126, 62, 186);
+    border: black solid 3px;
+}
+
+
+.pokemon-card {
+    padding: 15px;
+    width: 150px;
+    text-align: center;
+    border-radius: 8px;
+    background-color:rgb(126, 62, 186);
+}
+
+
+.pokemon-image {
+    width: 100px;
+    height: auto;
+}
+
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    background-color: rgb(126, 62, 186);
+    border: black solid 2px;
+}

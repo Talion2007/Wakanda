@@ -76,6 +76,52 @@ async function init() {
 
 init();
 
+async function fetchTop10Pokemon() {
+  const pokemonListElement = document.getElementById ("pokemonList");
+
+  for (let i = 1; i <= 1000; i++) {
+
+    document.getElementById("listSection").style.display = "block";
+
+    if (i == 1000) break;
+
+    try {
+        const response = await fetch (`http://localhost:4000/pokemon/${i}`);
+        if (!response.ok) throw new Error ("Erro ao buscar dados do Pokémon :(")
+
+        const data = await response.json();
+
+
+        //criação do card do Pokémon
+
+        const pokemonCard = document.createElement ("div");
+        pokemonCard.className = "pokemon-card";
+
+        const pokemonImage = document.createElement ("img");
+        pokemonImage.src = data.image;
+        pokemonImage.alt = `Imagem de ${data.name}`;
+        pokemonImage.className = "pokemon-image";
+
+        const pokemonName = document.createElement ("h3");
+        pokemonName.textContent = data.name;
+        
+        const pokemonTypes = document.createElement("p");
+        pokemonTypes.textContent = `Tipos: ${data.types}`;
+
+        //adiciona os elementos ao Card 
+        pokemonCard.appendChild(pokemonImage);
+        pokemonCard.appendChild(pokemonName);
+        pokemonCard.appendChild(pokemonTypes);
+
+        //adicona o card á lista 
+        pokemonListElement.appendChild(pokemonCard);
+    } catch (error) { 
+        console.log ("Erro ao buscar dados do Pokémon:", error);
+    }
+
+    }
+  }
+
 async function fetchPokemon(currentID) {
   const pokemonName = document.getElementById("pokemonName").value.trim();
 
