@@ -4,6 +4,18 @@ function searchKey() {
   }
 }
 
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowRight') {
+    nextPokemon();
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') {
+    prevPokemon();
+  }
+});
+
 const currentID = 1;
 
 async function init() {
