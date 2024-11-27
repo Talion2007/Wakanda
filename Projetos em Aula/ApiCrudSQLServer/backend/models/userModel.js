@@ -80,8 +80,7 @@ exports.updateUser = (id, name, age, email, contact, callback) => {
       return callback(err, null); // Trata erros de conexão
     }
     // Consulta SQL para atualizar o nome do usuário pelo ID
-    const query = `UPDATE Users SET name = '${name}', age = ${age}, email = ${email}, contact = ${contacts} WHERE id = ${id}`;
-
+    const query = `UPDATE Users SET name = @name, age = @age, email = @email, contact = @contact WHERE id = @id`;
     const request = new Request(query, (err) => {
       if (err) {
         callback(err); // Chama a função callback com erro se houver falha
@@ -125,4 +124,51 @@ exports.deleteUser = (id, callback) => {
     connection.execSql(request); // Executa a remoção no banco de dados
   });
   connection.connect(); // Inicia a conexão
+};
+
+
+// Função para buscar um usuário pelo ID
+exports.getUserById = (id, callback) => {
+  if (isNaN(id) || id <= 0) {
+    return callback(new Error("ID inválido"), null);
+  }
+
+  const connection = createConnection();
+  connection.on("connect", (err) => {
+    if (err) {
+      return callback(err, null);
+    }
+
+    const query = `SELECT * FROM Users WHERE id = @id`;
+    const request = new Request(query, (err, rowCount) => {
+      if (err) {
+        return callback(err, null);
+      }
+
+      if (rowCount === 0) {
+        // Garante que o callback só seja chamado uma vez com resultado nulo
+        return callback(null, null);
+      }
+    });
+
+    let user = null;
+    request.on("row", (columns) => {
+      user = {
+        id: columns[0].value,
+        name: columns[1].value,
+        age: columns[2].value,
+        email: columns[3].value,
+        contact: columns[4].value,
+      };
+    });
+
+    request.on("requestCompleted", () => {
+      callback(null, user);
+    });
+
+    request.addParameter("id", TYPES.Int, id);
+    connection.execSql(request);
+  });
+
+  connection.connect();
 };
