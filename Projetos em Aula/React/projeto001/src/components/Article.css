@@ -1,0 +1,16 @@
+article {
+    text-align: justify;
+    background-color: #2d2d2d;
+    border: 0.3vw solid #00635aff;
+    width: 90vw;
+    padding: 2.5vw;
+    color: #7cbfb4ff;
+
+    p:hover{
+      filter: drop-shadow(0 0 2em #7cbfb4ff);
+    }
+  }
+
+  article:hover {
+    filter: drop-shadow(0 0 2em #00635aff);
+  }

@@ -1,0 +1,15 @@
+footer {
+  background-color: #2d2d2d;
+  border: 0.3vw solid #00635aff;
+  width: 95vw;
+  color: #7cbfb4ff;
+  text-align: center;
+
+  p:hover{
+    filter: drop-shadow(0 0 2em #7cbfb4ff);
+  }
+}
+
+footer:hover {
+  filter: drop-shadow(0 0 2em #00635aff);
+}

@@ -1,0 +1,36 @@
+header {
+  background-color: #2d2d2d;
+  border: 0.3vw solid #00635aff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 95vw;
+
+  img {
+    width: 10vw;
+  }
+
+  img:hover {
+    filter: drop-shadow(0 0 2em #00635aff);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h1,
+    h2 {
+      color: #7cbfb4ff;
+    }
+
+    h1:hover , h2:hover {
+      filter: drop-shadow(0 0 2em #7cbfb4ff);
+    }
+  }
+}
+
+header:hover {
+  filter: drop-shadow(0 0 2em #00635aff);
+}
